@@ -4,10 +4,7 @@ import com.springcloud.dream.mall.entity.User;
 import com.springcloud.dream.mall.service.UserService;
 import com.springcloud.dream.mall.util.FormatTimeZoneDate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -19,6 +16,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{id}")
+    @ResponseBody
     public User queryById(@PathVariable("id") int id) {
         User user = userService.queryById(id);
 
@@ -30,7 +28,7 @@ public class UserController {
             user.setName("songZhen");
             user.setAge(25);
             user.setSex(1);
-            user.setBirthday(FormatTimeZoneDate.formatTime(new Date()));
+            user.setBirthday(new Date());
             user.setCreatTime(FormatTimeZoneDate.formatTime(new Date()));
             user.setUpdateTime(FormatTimeZoneDate.formatTime(new Date()));
             user.setNote("");
