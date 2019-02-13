@@ -63,6 +63,8 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
     // okhttp
     implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.12.1'
+    //feign
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.1.0.RELEASE'
 
 
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
